@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Inheriting base styles from your login page */
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color, #ffffff);
+  color: var(--text-color, #333);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cart-container {
+  width: 90%;
+  max-width: 1200px;
+  background-color: var(--background-color, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  background-color: var(--panel-bg, rgb(66 99 235 / 0.4));
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 15px;
+  background: transparent;
+  border: none;
+  color: var(--text-color, #333);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabButton i {
+  font-size: 18px;
+}
+
+.tabButton.active {
+  background-color: var(--background-color, #ffffff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabButton:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tab Content Styles */
+.tabContent {
+  padding: 30px;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-color, #333);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Cart Items */
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.cartItem {
+  display: flex;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color, #ffffff);
+}
+
+.itemImage {
+  flex: 0 0 100px;
+  margin-right: 15px;
+}
+
+.imageContainer {
+  width: 100px;
+  height: 100px;
+  background-color: var(--input-bg, #f0f0f0);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.itemDetails h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.itemDetails p {
+  margin: 3px 0;
+  color: #666;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--text-color, #333) !important;
+}
+
+.itemActions {
+  flex: 0 0 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantityBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--btn-bg, rgb(66 99 235 / 0.4));
+  color: var(--btn-text, black);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemTotal {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: #ff5555;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Cart Summary */
+.cartSummary {
+  background-color: var(--input-bg, #f0f0f0);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.total {
+  font-weight: 700;
+  font-size: 20px;
+  border-bottom: none;
+  margin-top: 10px;
+}
+
+.checkoutBtn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Orders List */
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.orderCard {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.orderHeader {
+  padding: 15px;
+  background-color: var(--input-bg, #f0f0f0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderHeader h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.orderHeader p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.orderStatus {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.processing {
+  background-color: #fff8e1;
+  color: #ffa000;
+}
+
+.shipped {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.delivered {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.orderItems {
+  padding: 15px;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.itemInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.orderFooter {
+  padding: 15px;
+  background-color: var(--input-bg, #f0f0f0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderTotal {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.orderActions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Transaction History */
+.transactionsList {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transactionHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  padding: 15px;
+  background-color: var(--input-bg, #f0f0f0);
+  font-weight: 600;
+}
+
+.transactionRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  align-items: center;
+}
+
+.transactionRow:last-child {
+  border-bottom: none;
+}
+
+.completed {
+  color: #388e3c;
+}
+
+.pending {
+  color: #ffa000;
+}
+
+.failed {
+  color: #d32f2f;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color, #333);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.emptyState i {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.emptyState p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Button Styling (inherited from your login page) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 150px;
+  height: 45px;
+  background-color: var(--btn-bg, rgb(66 99 235 / 0.4));
+  border: 0.9px solid var(--border-color, black);
+  outline: none;
+  border-radius: 25px;
+  color: var(--btn-text, black);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.btn.transparent {
+  background-color: transparent;
+  border: 2px solid var(--border-color, black);
+  color: var(--border-color, black);
+  box-shadow: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 870px) {
+  .orderFooter {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .orderActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .transactionHeader, .transactionRow {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .transactionHeader span:nth-child(n+4):nth-child(-n+6), 
+  .transactionRow span:nth-child(n+4):nth-child(-n+6) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartItem {
+    flex-direction: column;
+  }
+  
+  .itemImage {
+    align-self: center;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .itemDetails {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .itemActions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 570px) {
+  .tabs {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .tabButton {
+    margin: 0;
+  }
+  
+  .tabContent {
+    padding: 20px 15px;
+  }
+  
+  .transactionHeader, .transactionRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .transactionHeader span:nth-child(3), 
+  .transactionRow span:nth-child(3) {
+    display: none;
+  }
+}

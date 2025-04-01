@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #4481eb;
+  --primary-light: #dbe4fd;
+  --primary-dark: #2c3e50;
+  --secondary-color: #04befe;
+  --text-color: #333;
+  --text-light: #555;
+  --text-lighter: #7b7b7b;
+  --background-color: #ffffff;
+  --background-light: #f8f9fa;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --border-color: #e6e6e6;
+  --border-radius: 10px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --input-bg: #f0f0f0;
+  --glow-color: rgba(4, 190, 254, 0.5);
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+  --primary-color: #3461c1;
+  --primary-light: #1e3a8a;
+  --primary-dark: #0c1740;
+  --secondary-color: #1e90ff;
+  --text-color: #f5f5f5;
+  --text-light: #e0e0e0;
+  --text-lighter: #b0b0b0;
+  --background-color: #121212;
+  --background-light: #1a1a1a;
+  --border-color: #333;
+  --input-bg: #1e1e1e;
+  --glow-color: rgba(30, 144, 255, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color));
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  transition: 1.8s ease-in-out;
+  z-index: 0;
+}
+
+.innerContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  height: 750px;
+}
+
+/* Left Panel - Branding & Illustration */
+.leftPanel {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.leftPanel::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  top: -150px;
+  right: -150px;
+}
+
+.leftPanel::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  bottom: -100px;
+  left: -100px;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.storeLogo {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.illustrationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  position: relative;
+  z-index: 1;
+  height: 130px;
+}
+
+.illustration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storeIcon {
+  font-size: 7rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.glowEffect {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--glow-color);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.textContent {
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.textContent h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.textContent p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.benefitCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.benefitCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.benefitIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.benefitCard p {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Right Panel - Form */
+.rightPanel {
+  background: var(--background-color);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  color: var(--secondary-color);
+}
+
+.formHeader h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-color);
+  margin: 0 auto;
+}
+
+.progressContainer {
+  margin-bottom: 2rem;
+}
+
+.progressBar {
+  height: 6px;
+  background-color: var(--primary-light);
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-lighter);
+}
+
+.activeStep {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.formContainer {
+  height: 100%;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-light) transparent;
+}
+
+.formContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.formContainer::-webkit-scrollbar-thumb {
+  background-color: var(--primary-light);
+  border-radius: 10px;
+}
+
+.formStep {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.stepTitle {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.inputLabel {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-lighter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(68, 129, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+.textareaWrapper {
+  position: relative;
+}
+
+.textareaField {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.textareaField:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(68, 129, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+.textareaWrapper .inputIcon {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  transform: none;
+}
+
+.inputField.inputError, .textareaField.inputError {
+  border-color: var(--error-color);
+}
+
+.errorText {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.errorMessage {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--error-color);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.actionButton {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.continueBtn {
+  color: var(--text-color);
+  width: 100%;
+  height: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(68, 129, 235, 0.3);
+  border-radius: 24px;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.actionButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.buttonGroup .continueBtn {
+  flex: 1;
+}
+
+.submitBtn {
+  color: white;
+  flex: 2;
+  border-radius: 24px;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(68, 129, 235, 0.3);
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.successIcon {
+  font-size: 4rem;
+  color: var(--success-color);
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 8px rgba(46, 204, 113, 0.3));
+}
+
+.successMessage h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.successMessage p {
+  color: var(--text-light);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.formFooter {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  padding-top: 2rem;
+}
+
+.loginLink {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 650px;
+  }
+  
+  .leftPanel {
+    display: none;
+  }
+  
+  .rightPanel {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .innerContainer {
+    padding: 1rem;
+  }
+  
+  .rightPanel {
+    padding: 1.5rem;
+  }
+  
+  .formHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+  
+  .formContainer {
+    max-height: 450px;
+  }
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .inputField, [data-theme="dark"] .textareaField {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .backBtn {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .successIcon {
+  color: #29b873;
+}
+
+[data-theme="dark"] .benefitCard {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .benefitCard:hover {
+  background: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,92 @@
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-in-out;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.message {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.detailLine {
+  margin-top: 6px;
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.9;
+  padding-left: 4px;
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.reasonLine {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 8px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-left: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.success {
+  background-color: #4caf50;
+  border-left: 4px solid #2e7d32;
+}
+
+.error {
+  background-color: #f44336;
+  border-left: 4px solid #c62828;
+}
+
+.info {
+  background-color: #2196f3;
+  border-left: 4px solid #0d47a1;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+} 

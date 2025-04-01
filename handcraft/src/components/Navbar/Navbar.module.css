@@ -1,0 +1,114 @@
+.cartCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e53e3e;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: bold;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #4f46e5; /* Indigo-600 */
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+/* Animation effect when count changes */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.cartBadge:not(:empty) {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Mobile menu version of cart badge */
+li .cartBadge {
+  position: relative;
+  top: auto;
+  right: auto;
+  margin-left: 8px;
+}
+
+.mobileBadge {
+  position: static;
+  display: inline-flex;
+  margin-left: 8px;
+  vertical-align: middle;
+  top: auto;
+  right: auto;
+}
+
+.unreadBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.25rem;
+  border: 1px solid white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.navIcon:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* Animation for new messages */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hasNewMessage {
+  animation: pulse 1s infinite;
+} 
+
