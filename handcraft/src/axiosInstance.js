@@ -3,7 +3,7 @@ import { getAuthToken, removeAuthToken } from './utils/auth';
 
 // Create axios instance with base URL
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:7777/',
+  baseURL: 'https://ecommerce-3r10.onrender.com/',
   timeout: 10000, // 10 second timeout
 });
 

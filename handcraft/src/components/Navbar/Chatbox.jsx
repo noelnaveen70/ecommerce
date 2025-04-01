@@ -142,7 +142,7 @@ const Chatbox = () => {
           socket.current.disconnect();
         }
 
-        socket.current = io("http://localhost:7777", {
+        socket.current = io("https://ecommerce-3r10.onrender.com", {
           reconnectionAttempts: maxReconnectAttempts,
           reconnectionDelay: 1000,
           reconnectionDelayMax: 5000,
